@@ -1,0 +1,128 @@
+:root{
+  --thai-red:#DA2128;
+  --thai-blue:#2F3A8F;
+  --thai-white:#ffffff;
+  --thai-gold:#C9A227;
+  --bg:#fafafa;
+  --ink:#1f2937;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+  --shadow:0 6px 18px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--ink); background:var(--bg); line-height:1.65;
+}
+
+.container{max-width:1100px;margin-inline:auto;padding:0 1rem}
+.section{padding:2.5rem 0}
+.alt{background:#f5f7fb}
+.muted{color:var(--muted)}
+.caption{
+  text-align:center;
+  font-size:0.9rem;
+  color:var(--muted);
+  margin-top:0.5rem;
+}
+
+/* Header */
+.site-header{
+  background:
+    linear-gradient(90deg,var(--thai-red) 0 33%, var(--thai-white) 33% 66%, var(--thai-blue) 66% 100%);
+}
+.header-content{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+.brand{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.brand-flag{
+  width:52px;height:36px;border:2px solid #fff;border-radius:4px;box-shadow:var(--shadow);
+  background:
+    linear-gradient(#da2128 0 20%, #ffffff 20% 40%, #2f3a8f 40% 60%, #ffffff 60% 80%, #da2128 80% 100%);
+}
+.brand h1{margin:0;font-size:1.25rem}
+.tagline{margin:0;font-weight:600}
+
+/* Hero */
+.hero{
+  padding:2.5rem 0 1.75rem;
+  text-align:center;
+  background:radial-gradient(1000px 280px at 50% -60%, rgba(47,58,143,.18), transparent 70%);
+}
+.hero h2{font-size:2rem;margin:.25rem 0}
+.hero-inner p{max-width:780px;margin:.25rem auto 0;color:#374151}
+
+/* Flag divider */
+.flag-divider{
+  padding:1rem 0;
+  background:#fff;
+}
+.flag-divider img{
+  display:block;
+  max-width:980px;
+  width:92%;
+  height:auto;
+  margin:0 auto;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--line);
+  object-fit:contain;
+  background:#fff;
+}
+
+/* Split sections */
+.split-inner{display:grid;gap:1.25rem;grid-template-columns:1fr}
+.split-media img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  background:#fff;
+  padding:0.5rem;
+}
+.king-portrait{
+  border:2px solid var(--thai-gold); /* Gold border around King’s photo */
+}
+.split-text h3{
+  margin:.25rem 0 .5rem;
+  position:relative;
+  padding-bottom:0.5rem;
+}
+/* Left-aligned gold line under the title */
+.royal-title{
+  position: relative;
+  display: inline-block;       /* line matches the text width, not the whole column */
+  padding-bottom: 0.5rem;
+}
+
+.royal-title::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:-0.25em;                /* nudge a touch to the left */
+  width:calc(100% + 0.5em);    /* extend slightly beyond the text */
+  height:3px;
+  background:var(--thai-gold);
+  border-radius:2px;
+}
+
+
+.split-text address{font-style:normal;line-height:1.8}
+.contact a{color:#1d4ed8;text-decoration:none}
+
+@media (min-width: 820px){
+  .split-inner{grid-template-columns:1.05fr .95fr;align-items:center}
+  .split.split--reverse .split-inner{grid-template-columns:.95fr 1.05fr}
+  .split.split--reverse .split-inner > .split-media{order:2}
+  .split.split--reverse .split-inner > .split-text{order:1}
+}
+
+/* Footer */
+.site-footer{background:#0f172a;color:#cbd5e1;text-align:center;padding:1.1rem 0}
+
+/* Dark mode (optional) */
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0b0f19;--ink:#e5e7eb;--line:#1f2937}
+  .alt{background:#0d1222}
+  .brand h1,.tagline{color:#fff}
+}
