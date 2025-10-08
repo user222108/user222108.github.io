@@ -20,12 +20,13 @@ body{
 .section{padding:2.5rem 0}
 .alt{background:#f5f7fb}
 .muted{color:var(--muted)}
-.caption{
-  text-align:center;
-  font-size:0.9rem;
-  color:var(--muted);
-  margin-top:0.5rem;
-}
+.caption{ text-align:center; font-size:0.9rem; color:var(--muted); margin-top:0.5rem; }
+
+/* Simple prose styling for long text */
+.prose{max-width:78ch}
+.prose p{margin:.6rem 0}
+.prose h4{margin:1rem 0 .4rem 0}
+.note{margin-top:1rem; padding:.9rem 1rem; border:1px solid var(--line); border-radius:12px; background:#fff; box-shadow:var(--shadow)}
 
 /* Header */
 .site-header{
@@ -49,63 +50,32 @@ body{
   background:radial-gradient(1000px 280px at 50% -60%, rgba(47,58,143,.18), transparent 70%);
 }
 .hero h2{font-size:2rem;margin:.25rem 0}
+.welcome-title{ text-transform: uppercase; }
 .hero-inner p{max-width:780px;margin:.25rem auto 0;color:#374151}
 
 /* Flag divider */
-.flag-divider{
-  padding:1rem 0;
-  background:#fff;
-}
+.flag-divider{ padding:1rem 0; background:#fff; }
 .flag-divider img{
-  display:block;
-  max-width:980px;
-  width:92%;
-  height:auto;
-  margin:0 auto;
-  border-radius:12px;
-  box-shadow:var(--shadow);
-  border:1px solid var(--line);
-  object-fit:contain;
-  background:#fff;
+  display:block; max-width:980px; width:92%; height:auto; margin:0 auto;
+  border-radius:12px; box-shadow:var(--shadow); border:1px solid var(--line);
+  object-fit:contain; background:#fff;
 }
 
 /* Split sections */
 .split-inner{display:grid;gap:1.25rem;grid-template-columns:1fr}
 .split-media img{
-  width:100%;
-  height:auto;
-  object-fit:contain;
-  border-radius:14px;
-  box-shadow:var(--shadow);
-  background:#fff;
-  padding:0.5rem;
+  width:100%; height:auto; object-fit:contain;
+  border-radius:14px; box-shadow:var(--shadow); background:#fff; padding:0.5rem;
 }
-.king-portrait{
-  border:2px solid var(--thai-gold); /* Gold border around King’s photo */
-}
-.split-text h3{
-  margin:.25rem 0 .5rem;
-  position:relative;
-  padding-bottom:0.5rem;
-}
-/* Left-aligned gold line under the title */
-.royal-title{
-  position: relative;
-  display: inline-block;       /* line matches the text width, not the whole column */
-  padding-bottom: 0.5rem;
-}
+.king-portrait{ border:2px solid var(--thai-gold); }
+.split-text h3{ margin:.25rem 0 .5rem; position:relative; padding-bottom:0.5rem; }
 
+/* Gold underline under the King title (left aligned, full width of text) */
+.royal-title{ position:relative; display:inline-block; padding-bottom:0.5rem; }
 .royal-title::after{
-  content:"";
-  position:absolute;
-  bottom:0;
-  left:-0.25em;                /* nudge a touch to the left */
-  width:calc(100% + 0.5em);    /* extend slightly beyond the text */
-  height:3px;
-  background:var(--thai-gold);
-  border-radius:2px;
+  content:""; position:absolute; bottom:0; left:-0.25em;
+  width:calc(100% + 0.5em); height:3px; background:var(--thai-gold); border-radius:2px;
 }
-
 
 .split-text address{font-style:normal;line-height:1.8}
 .contact a{color:#1d4ed8;text-decoration:none}
@@ -125,4 +95,7 @@ body{
   :root{--bg:#0b0f19;--ink:#e5e7eb;--line:#1f2937}
   .alt{background:#0d1222}
   .brand h1,.tagline{color:#fff}
+  .note{background:#0f172a;border-color:#1f2937}
 }
+
+
